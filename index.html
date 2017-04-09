@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MomChill</title>
+        <meta name="description" content="A prototype for exploring youth health data">
+        <link rel="stylesheet" href="main.css">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        
+        <script type="application/javascript" src="js/model.js"></script>
+        <script type="application/javascript" src="js/view.js"></script>
+        <script type="application/javascript" src="js/controller.js"></script>
+        
+        <script type="application/javascript" src="js/html2canvas.js"></script>
+        <script type="application/javascript" src="js/canvas2image.js"></script>
+        <script type="application/javascript" src="js/base64.js"></script>
+    </head>
+    <body>
+        <!--BANNER-->
+        
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">MomChill</a>
+                  </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>  
+              </div>
+            </nav>
+        <!--SIDE MENU + MAIN CONTENT PANELS-->
+        <div class="container-fluid">
+          <div class="row">
+            <!--Graphics Control Box-->
+            <div id="panel-toolbox" class="col-xs-5 col-md-3">  
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Toolbox</h3>
+                  </div>
+                <div class="panel-body" id="panel-toolbox-content">
+                    <div class="form-inline">
+                        <button class="btn btn-default" id="btn-giphyleft"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                        <button class="btn btn-default" id="btn-giphyright"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                    </div>
+                    <hr>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="giphykeywords">Keywords</label>
+                            <input type="text" class="form-control" id="giphykeywords" placeholder="keywords">
+                            <div id="btn-clear-keywords" class="glyphicon glyphicon glyphicon glyphicon-remove-circle" aria-hidden="true"></div>
+                        </div>
+                        <button class="btn btn-default" id="btn-updategiphy">Update Giphy</button>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="memewords">Add Content</label>
+                            <input type="text" class="form-control" id="memewords" placeholder="optional">
+                    </div>
+                    <hr>
+                    <button class="btn btn-default" id="btn-saveimage">Save Image</button>
+                </div>
+              </div>
+              </div>
+              
+            <div id="panel-main" class="col-xs-7 col-md-5">
+              
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Preview</h3>
+                  </div>
+                  <div class="panel-body" id="panel-main-content">
+                      <div id="chart-layer">
+                            <div id="chart"></div>
+                            <div id="chart-label"></div>
+                        </div>
+                      <div id="image-content">
+                          
+                      </div>
+                      <div id="meme-label">
+                            
+                        </div>
+                        
+                  </div>
+                    
+                </div> 
+            </div>
+            <div id="panel-side" class="col-xs-6 col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <div class="form-inline">
+                        <span class="panel-title">Data Source</span>
+                        <select class="form-control" id="data-source-selector">
+                          <option selected>Youth Health</option>
+                          <option>Community Health</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="panel-body" id="panel-side-content">
+                    
+                  </div>
+                </div>  
+            </div>
+          </div>
+            
+            <!--output of image-->
+            <div id="img-out"></div>
+        </div>
+        
+    <script>
+        controller.initialize();
+    </script>
+    </body>
+</html>

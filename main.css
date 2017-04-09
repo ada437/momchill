@@ -1,0 +1,80 @@
+#panel-side{
+    /*background: #eaeaea;*/
+    padding: 10px;
+}
+
+#panel-main{
+    padding: 10px;
+}
+
+
+#panel-main-content{
+    width: 475px;
+    min-height: 150px;
+    background: #eeeeee;
+    position: relative;
+    background-size: 100% 100%;
+    padding: 0px;
+}
+
+#chart{
+    display: inline-block;
+    position: relative;
+}
+
+#chart-layer{
+    background: black;
+    position: relative;
+    width: 475px;
+    vertical-align: middle;
+    padding: 0px 0px 0px 10px;
+    color: #ffffff;
+}
+
+#chart-label{
+    display: inline-block;
+    width: 90%;
+    font-size: 14px;
+    color: #d2d2d2;
+}
+
+#meme-label{
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: impact;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    letter-spacing: 1px;
+  text-shadow:2px 2px 0 #000,
+  -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+  0px 2px 0 #000,
+  2px 0px 0 #000,
+  0px -2px 0 #000,
+  -2px 0px 0 #000,
+  2px 2px 5px #000;
+}
+
+#panel-toolbox{
+    width: 275px;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
